@@ -1,0 +1,11 @@
+pytest==8.3.4
+pytest-ordering==0.6
+pytest-xdist==3.6.1
+requests==2.32.3
+allure-pytest==2.13.5
+jsonpath==0.82.2
+PyYAML==6.0.2
+deepdiff==8.1.1
+jsonschema==4.23.0
+python-dotenv==1.0.1
+loguru==0.7.3
