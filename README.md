@@ -41,3 +41,19 @@ python run.py --generate
 ## 技术栈
 
 Python 3.12+ · Pytest · Requests · Allure Framework · JSONSchema · DeepDiff · Loguru
+
+## 案例：基于 OpenClaw 的自动化代码审查 Agent
+
+我们基于 [OpenClaw](https://openclaw.ai) 搭建了一套自动化代码审查 Agent，集成到 GitHub PR 工作流中。
+
+**实现方式**：
+- 通过 OpenClaw 的 GitHub 插件，在 PR 创建/更新时自动触发审查
+- 配置 auto-quality 审查流水线：Gatekeeper 初审 → Reviewer 深度审查 → Fixer 自动修复循环
+- 审查规则写入 `review-rules.md`，覆盖代码风格、安全漏洞、性能隐患、边界条件四大维度
+- 审查结果自动回写到 PR 评论区，附带文件路径、行号定位和修改建议
+
+**落地效果**（20 人应用团队，运行 3 个月）：
+- 每日消耗约 500 万 Token
+- 代码评审效率提升 40%
+- PR 合并周期从平均 4.2 小时缩短至 2.1 小时
+- 线上 Bug 率下降约 25%
